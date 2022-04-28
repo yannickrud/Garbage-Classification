@@ -1,2 +1,2 @@
-# Garbage-Collection
+# Garbage-Classification
 Repository for ML4B
