@@ -15,7 +15,7 @@ st.header('Team Presentation')
 # TODO - Projekt Presentation
 st.header('Projekt Presentation')
 
-# TODO - Element from Dataset
+# Element from Dataset
 st.header('Image Classification')
 
 dir = './dataSources/'
