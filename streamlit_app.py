@@ -38,3 +38,5 @@ df = pd.DataFrame.from_dict(dicts)
 st.dataframe(df)
 
 # TODO - Interactive Element
+
+file = st.file_uploader("Upload Image",type=["png","jpg","jpeg"])
