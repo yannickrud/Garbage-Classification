@@ -11,10 +11,10 @@ with st.sidebar:
 
 # TODO - Team Presentation
 st.header('Team Presentation')
-
+    print('Hi, we are Yannick Rudolf, Nico Schunk and Christoph Lehr. We are creating this app as part of our Machine Learning for Business course.')
 # TODO - Projekt Presentation
 st.header('Projekt Presentation')
-
+    
 # TODO - Element from Dataset
 st.header('Image Classification')
 
