@@ -10,13 +10,13 @@ with st.sidebar:
     st.markdown("[Image classification](#image-classification)", unsafe_allow_html=True)
 
 # TODO - Team Presentation
-with st.expander('Team Presentation')
-    st.write('Hi, we are Yannick Rudolf, Nico Schunk and Christoph Lehr. We are creating this app as part of our Machine Learning for Business course.')
+with st.expander("Team Presentation")
+    st.write("Hi, we are Yannick Rudolf, Nico Schunk and Christoph Lehr. We are creating this app as part of our Machine Learning for Business course.")
 # TODO - Projekt Presentation
-st.header('Projekt Presentation')
-st.text('This app will specify images from six different garbage categories. To categorize them we will use Machine Learning and Deep Learing Techniques.')
+with st.expander("Project Presentation")
+    st.write("This app will specify images from six different garbage categories. To categorize them we will use Machine Learning and Deep Learing Techniques.")
 # Element from Dataset
-st.header('Image Classification')
+with st.expander("Image Classification")
 
 dir = './dataSources/'
 
