@@ -14,29 +14,30 @@ with st.expander("Team Presentation"):
     st.write("Hi, we are Yannick Rudolf, Nico Schunk and Christoph Lehr. We are creating this app as part of our Machine Learning for Business course.")
 # TODO - Projekt Presentation
 with st.expander("Project Presentation"):
-    st.write("This app will specify images from six different garbage categories. To categorize them we will use Machine Learning and Deep Learing Techniques.")
+    st.write("This app will specify images from six different garbage categories. To categorize them we will use Machine Learning and Deep Learing Techniques. We got the following samples:")
 # Element from Dataset
+
+
+    dir = './dataSources/'
+
+    labels = os.listdir(dir + '/Garbage classification/Garbage classification/')
+
+
+    dicts = []
+
+    for label in labels:
+        directory = os.path.join(dir + '/Garbage classification/Garbage classification/', label)
+        samples = os.listdir(directory)
+
+        x = {'Type': label, 'Samples': len(samples)}
+        dicts.append(x)
+
+
+    df = pd.DataFrame.from_dict(dicts)
+    st.dataframe(df)
+    st.write("Our aim is to get uploaded pictures specified.")
 with st.expander("Image Classification"):
     st.write("test")
-dir = './dataSources/'
-
-labels = os.listdir(dir + '/Garbage classification/Garbage classification/')
-
-col1, col2 = st.columns(2)
-
-dicts = []
-
-for label in labels:
-    directory = os.path.join(dir + '/Garbage classification/Garbage classification/', label)
-    samples = os.listdir(directory)
-
-    x = {'Type': label, 'Samples': len(samples)}
-    dicts.append(x)
-
-
-df = pd.DataFrame.from_dict(dicts)
-st.dataframe(df)
-
 # TODO - Interactive Element
 
 file = st.file_uploader("Upload Image",type=["png","jpg","jpeg"])
