@@ -2,7 +2,7 @@ import streamlit as st
 import os
 import pandas as pd
 
-st.title('Garbage-Classification ML4B')
+st.title('Garbage-Classification ML4B Group 2')
 
 with st.sidebar:
     st.markdown("[Team Presentation](#team-presentation)", unsafe_allow_html=True)
