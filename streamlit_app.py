@@ -7,7 +7,7 @@ st.title('Garbage-Classification ML4B')
 with st.sidebar:
     st.markdown("[Team Presentation](#team-presentation)", unsafe_allow_html=True)
     st.markdown("[Projekt Presentation](#projekt-presentation)", unsafe_allow_html=True)
-    st.markdown("[Image classification](#image-classification)", unsafe_allow_html=True)
+  #  st.markdown("[Image classification](#image-classification)", unsafe_allow_html=True)
 
 
 with st.expander("Team Presentation"):
