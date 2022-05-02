@@ -35,7 +35,7 @@ with st.expander("Project Presentation"):
 
     df = pd.DataFrame.from_dict(dicts)
     st.dataframe(df)
-    st.write("Our aim is to get uploaded pictures specified.")
+    st.write("Our aim is to get uploaded images specified.")
 
 
 file = st.file_uploader("Upload Image",type=["png","jpg","jpeg"])
