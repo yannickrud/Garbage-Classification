@@ -36,7 +36,7 @@ with st.expander("Project Presentation"):
 
 print(labels)
 selected_images = st.sidebar.selectbox("Trash Type", labels)
-st.header("Samples:")
+st.header("Samples")
 type_path = os.path.join(dir + 'Garbage classification/Garbage classification/', selected_images)
 list_of_images = os.listdir(type_path)
 image_box = st.sidebar.selectbox("Select Sample", list_of_images)
