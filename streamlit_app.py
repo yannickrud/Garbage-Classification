@@ -1,6 +1,10 @@
 import streamlit as st
 import os
 import pandas as pd
+from PIL import Image
+
+dir = './dataSources/'
+labels = os.listdir(dir + '/Garbage classification/Garbage classification/')
 
 st.title('Garbage-Classification ML4B')
 
