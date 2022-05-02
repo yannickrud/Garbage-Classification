@@ -9,13 +9,13 @@ with st.sidebar:
     st.markdown("[Projekt Presentation](#projekt-presentation)", unsafe_allow_html=True)
     st.markdown("[Image classification](#image-classification)", unsafe_allow_html=True)
 
-# TODO - Team Presentation
+
 with st.expander("Team Presentation"):
     st.write("Hi, we are Yannick Rudolf, Nico Schunk and Christoph Lehr. We are creating this app as part of our Machine Learning for Business course.")
-# TODO - Projekt Presentation
+
 with st.expander("Project Presentation"):
     st.write("This app will specify images from six different garbage categories. To categorize them we will use Machine Learning and Deep Learing Techniques. We got the following samples:")
-# Element from Dataset
+
 
 
     dir = './dataSources/'
@@ -36,8 +36,6 @@ with st.expander("Project Presentation"):
     df = pd.DataFrame.from_dict(dicts)
     st.dataframe(df)
     st.write("Our aim is to get uploaded pictures specified.")
-with st.expander("Image Classification"):
-    st.write("test")
-# TODO - Interactive Element
+
 
 file = st.file_uploader("Upload Image",type=["png","jpg","jpeg"])
