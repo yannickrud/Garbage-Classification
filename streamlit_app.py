@@ -11,7 +11,7 @@ with st.sidebar:
 
 # TODO - Team Presentation
 st.header('Team Presentation')
-    st.text("Hi, we are Yannick Rudolf, Nico Schunk and Christoph Lehr. We are creating this app as part of our Machine Learning for Business course.")
+    st.text('Hi, we are Yannick Rudolf, Nico Schunk and Christoph Lehr. We are creating this app as part of our Machine Learning for Business course.')
 # TODO - Projekt Presentation
 st.header('Projekt Presentation')
     st.text("This app will specify images from six different garbage categories.  To categorize them we will use Machine Learning and Deep Learing Techniques.")
