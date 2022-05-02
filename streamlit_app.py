@@ -36,13 +36,12 @@ with st.expander("Project Presentation"):
 
 print(labels)
 selected_images = st.sidebar.selectbox("Trash Type", labels)
-
-available_images = []
-x = os.path.join(dir + 'Garbage classification/Garbage classification/', selected_images)
-y = os.listdir(x)
-z = st.sidebar.selectbox("Select Sample", y)
-a = os.path.join(x,z)
-image = Image.open(a)
-st.image(image, caption=z)
+st.header("Samples")
+type_path = os.path.join(dir + 'Garbage classification/Garbage classification/', selected_images)
+list_of_images = os.listdir(type_path)
+image_box = st.sidebar.selectbox("Select Sample", list_of_images)
+sample_path = os.path.join(type_path,image_box)
+image = Image.open(sample_path)
+st.image(image, caption=image_box)
 
 file = st.file_uploader("Upload Image",type=["png","jpg","jpeg"])
