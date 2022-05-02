@@ -20,13 +20,6 @@ with st.expander("Team Presentation"):
 with st.expander("Project Presentation"):
     st.write("This app will specify images from six different garbage categories. To categorize them we will use Machine Learning and Deep Learing Techniques. We got the following samples:")
 
-
-
-    dir = './dataSources/'
-
-    labels = os.listdir(dir + '/Garbage classification/Garbage classification/')
-
-
     dicts = []
 
     for label in labels:
@@ -41,5 +34,15 @@ with st.expander("Project Presentation"):
     st.dataframe(df)
     st.write("Our aim is to get uploaded images specified.")
 
+print(labels)
+selected_images = st.sidebar.selectbox("Trash Type", labels)
+
+available_images = []
+x = os.path.join(dir + 'Garbage classification/Garbage classification/', selected_images)
+y = os.listdir(x)
+z = st.sidebar.selectbox("Select Sample", y)
+a = os.path.join(x,z)
+image = Image.open(a)
+st.image(image, caption=z)
 
 file = st.file_uploader("Upload Image",type=["png","jpg","jpeg"])
