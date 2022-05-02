@@ -10,7 +10,7 @@ with st.sidebar:
   #  st.markdown("[Image classification](#image-classification)", unsafe_allow_html=True)
 
 
-with st.expander("Team Presentation"):
+with st.expander("Team Penis Presentation"):
     st.write("Hi, we are Yannick Rudolf, Nico Schunk and Christoph Lehr. We are creating this app as part of our Machine Learning for Business course.")
 
 with st.expander("Project Presentation"):
