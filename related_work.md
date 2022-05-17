@@ -6,7 +6,7 @@
 * IEEE
 * Springer Link
 
-## Literature
+## Literature & Resources:
 
 Minderer, M., Gritsenko, A., Stone, A., Neumann, M., Weissenborn, D., Dosovitskiy, A., Mahendran, A., Arnab, A., Dehghani, M., Shen, Z., Wang, X., Zhai, X., Kipf, T., & Houlsby, N. (o. J.). Simple Open-Vocabulary Object Detection with Vision Transformers. 28.
 
