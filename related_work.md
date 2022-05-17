@@ -1,6 +1,6 @@
-# Related Work
+# Related Work - Garbage Classification
 
-## Research:
+## Research Platforms:
 
 * Google Scholar
 * IEEE
