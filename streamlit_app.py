@@ -16,6 +16,16 @@ with st.sidebar:
 
 with st.expander("Team Presentation"):
     st.write("Hi, we are Yannick Rudolf, Nico Schunk and Christoph Lehr. We are creating this app as part of our Machine Learning for Business course.")
+    col1, col2, col3 = st.columns(3)
+with col1:
+    # Yannick Rudolf
+    st.markdown("Yannick Rudolf", unsafe_allow_html=True)
+with col2:
+    # Nico Schunk
+    st.markdown("Nico Schunk", unsafe_allow_html=True)
+with col3:
+    # Christoph Lehr
+    st.markdown("Christoph Lehr", unsafe_allow_html=True)
 
 with st.expander("Project Presentation"):
     st.write("This app will specify images from six different garbage categories. To categorize them we will use Machine Learning and Deep Learing Techniques. We got the following samples:")
@@ -45,3 +55,4 @@ image = Image.open(sample_path)
 st.image(image, caption=image_box)
 
 file = st.file_uploader("Upload Image",type=["png","jpg","jpeg"])
+
