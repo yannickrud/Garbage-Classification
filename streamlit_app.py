@@ -3,6 +3,12 @@ import os
 import pandas as pd
 from PIL import Image
 
+st.set_page_config(
+    page_title="Hello",
+    page_icon="👋",
+)
+
+
 dir = './dataSources/'
 labels = os.listdir(dir + '/Garbage classification/Garbage classification/')
 
@@ -15,7 +21,7 @@ with st.sidebar:
 
 
 with st.expander("Team Presentation"):
-    st.write("Hi, we are Yannick Rudolf, Nico Schunk and Christoph Lehr. We are creating this app as part of our Machine Learning for Business course.")
+    "Hi, we are Yannick Rudolf, Nico Schunk and Christoph Lehr. We are creating this app as part of our Machine Learning for Business course."
     col1, col2, col3 = st.columns(3)
 with col1:
     # Yannick Rudolf
@@ -27,22 +33,31 @@ with col3:
     # Christoph Lehr
     st.markdown("Christoph Lehr", unsafe_allow_html=True)
 
-with st.expander("Project Presentation"):
-    st.write("This app will specify images from six different garbage categories. To categorize them we will use Machine Learning and Deep Learing Techniques. We got the following samples:")
-
-    dicts = []
-
-    for label in labels:
-        directory = os.path.join(dir + '/Garbage classification/Garbage classification/', label)
-        samples = os.listdir(directory)
-
-        x = {'Type': label, 'Samples': len(samples)}
-        dicts.append(x)
 
 
-    df = pd.DataFrame.from_dict(dicts)
-    st.dataframe(df)
-    st.write("Our aim is to get uploaded images specified.")
+'''
+This app is a tutorial: How to build your own computer vision model. It follows the CRISP-DM Process Model. 
+
+The example used for this tutorial is a garbage classification problem. The data used for this problem can be found on kaggle:
+https://www.kaggle.com/datasets/asdasdasasdas/garbage-classification
+'''
+'---------------------------------------OLD TARGET---------------------------------------'
+
+"This app will specify images from six different garbage categories. To categorize them we will use Machine Learning and Deep Learing Techniques. We got the following samples:"
+
+dicts = []
+
+for label in labels:
+    directory = os.path.join(dir + '/Garbage classification/Garbage classification/', label)
+    samples = os.listdir(directory)
+
+    x = {'Type': label, 'Samples': len(samples)}
+    dicts.append(x)
+
+
+df = pd.DataFrame.from_dict(dicts)
+st.dataframe(df)
+"Our aim is to get uploaded images specified."
 
 print(labels)
 selected_images = st.sidebar.selectbox("Trash Type", labels)
