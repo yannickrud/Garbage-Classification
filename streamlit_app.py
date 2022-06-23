@@ -14,11 +14,6 @@ labels = os.listdir(dir + '/Garbage classification/Garbage classification/')
 
 st.title('Garbage-Classification ML4B')
 
-with st.sidebar:
-    st.markdown("[Team Presentation](#team-presentation)", unsafe_allow_html=True)
-    st.markdown("[Projekt Presentation](#projekt-presentation)", unsafe_allow_html=True)
-  #  st.markdown("[Image classification](#image-classification)", unsafe_allow_html=True)
-
 
 with st.expander("Team Presentation"):
     "Hi, we are Yannick Rudolf, Nico Schunk and Christoph Lehr. We are creating this app as part of our Machine Learning for Business course."
@@ -59,7 +54,6 @@ df = pd.DataFrame.from_dict(dicts)
 st.dataframe(df)
 "Our aim is to get uploaded images specified."
 
-print(labels)
 selected_images = st.sidebar.selectbox("Trash Type", labels)
 st.header("Samples")
 type_path = os.path.join(dir + 'Garbage classification/Garbage classification/', selected_images)
