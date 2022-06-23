@@ -27,9 +27,10 @@ are influencing the goal and project plan.
 #### Inventory of Resources
 '''
 '''
-Our available resources are the following:  -the given data samples
-                                            -IDE as developer interface
-                                            -gitbook as front end
+Our available resources are the following:  
+- the given data samples
+- IDE as developer interface
+- gitbook as front end
 #### Requirements, Assumptions and Constraints                                            
 '''
 '''
