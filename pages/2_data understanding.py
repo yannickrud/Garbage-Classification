@@ -78,8 +78,4 @@ After sampling the data the classification is correct. The pictures are all the 
 The amount of data is enough to train a model. With data augmentation the training data for the model can be extended
 which leads to better results. This has to be done carefully. For example a car picture should not be flipped horizontal
 because this could lead to poorer performance of the models prediction.
-When training a model, there is a possibility that the data set is biased. Therefore, care must be taken during 
-development to keep the data set as bias-free as possible. In this example the image "plastic1.jpg" is a water bottle.
-There is no serious damage recognizable which could be interpreted as the bottle can still be used. Although some of those
-examples exists in the dataset we declare all data provided as garbage.
 '''
