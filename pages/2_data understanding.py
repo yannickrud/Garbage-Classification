@@ -2,6 +2,7 @@ from PIL import Image
 import streamlit as st
 import os
 import pandas as pd
+from matplotlib import pyplot as plt
 
 st.set_page_config(page_title="Data understanding")
 
@@ -23,17 +24,22 @@ https://www.kaggle.com/datasets/asdasdasasdas/garbage-classification
 First we load the labels of the pictures in a pandas dataframe with each category.
 '''
 
+import pathlib
+
 dir = './dataSources/'
-labels = os.listdir(dir + '/Garbage classification/Garbage classification/')
+data_dir = pathlib.Path(os.path.join(dir, './Garbage classification/Garbage classification/'))
 
 dicts = []
 
-for label in labels:
-    directory = os.path.join(dir + '/Garbage classification/Garbage classification/', label)
+for label in os.listdir(data_dir):
+    directory = os.path.join(data_dir, label)
     samples = os.listdir(directory)
 
+    print(directory)
+
     for img in samples:
-        x = {'img': img, 'category': label}
+        z = Image.open(os.path.join(directory, img))
+        x = {'img_name': img, 'category': label, 'size': z.size}
         dicts.append(x)
 
 df = pd.DataFrame.from_dict(dicts)
@@ -46,22 +52,31 @@ df = pd.DataFrame.from_dict(dicts)
 The dataset contains classified pictures of garbage. The categories are cardboard, glass, metal, paper, plastic and trash.
 
 '''
-number_of_samples = df.groupby('category').count()
+number_of_samples = df[['img_name', 'category']].groupby('category').count()
 number_of_samples
 
-'The total number of samples: ', df['img'].count()
+'The total number of samples: ', df['img_name'].count()
 '''
 ## Explore data
 ### Samples
 '''
-selected_images = st.selectbox("Trash Type", labels)
-type_path = os.path.join(dir + 'Garbage classification/Garbage classification/', selected_images)
+
+selected_images = st.selectbox("Trash Type", os.listdir(data_dir))
+type_path = os.path.join(data_dir, selected_images)
 list_of_images = os.listdir(type_path)
 image_box = st.selectbox("Select Sample", list_of_images)
 sample_path = os.path.join(type_path,image_box)
 image = Image.open(sample_path)
 st.image(image, caption=image_box)
 
+'The size of the pictures:'
+size_values = df['size'].unique()
+size_values
 '''
 ## Verify data quality
+
+After sampling the data the classification is correct. The pictures are all the same size.
+The amount of data is enough to train a model. With data augmentation the training data for the model can be extended
+which leads to better results. This has to be done carefully. For example a car picture should not be flipped horizontal
+because this could lead to poorer performance of the models prediction.
 '''
