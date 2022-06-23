@@ -19,6 +19,7 @@ The project has a useful outcome if the user of this app can build a computer vi
 '''
 
 '''
+neu
 ## Assess situation
 The next step is to get a more detailed look at the resources, constraints, assumptions and other factors that
 are influencing the goal and project plan.
