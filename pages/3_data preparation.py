@@ -16,6 +16,7 @@ Data preparation is divided into 5 steps in the CRISP-DM process model.
 
 '''
 ## Select data
+
 '''
 
 '''
