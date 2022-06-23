@@ -37,5 +37,6 @@ The example used for this tutorial is a garbage classification problem. The data
 https://www.kaggle.com/datasets/asdasdasasdas/garbage-classification
 '''
 
+st.camera_input('Welche Art von Müll bist du? Mache jetzt den Test!')
 file = st.file_uploader("Upload Image",type=["png","jpg","jpeg"])
 

@@ -24,6 +24,8 @@ examples exists in the dataset we declare all data provided as garbage.
 
 '''
 ## Clean data
+The data is in such good condition that it does not need to be cleaned at this time. Since modeling and data preparation
+are quite closely related, data may still need to be cleaned.
 '''
 
 '''
