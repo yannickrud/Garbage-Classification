@@ -34,8 +34,6 @@ for label in os.listdir(data_dir):
     directory = os.path.join(data_dir, label)
     samples = os.listdir(directory)
 
-    print(directory)
-
     for img in samples:
         z = Image.open(os.path.join(directory, img))
         x = {'img_name': img, 'category': label, 'size': z.size}
@@ -69,8 +67,10 @@ image = Image.open(sample_path)
 st.image(image, caption=image_box)
 
 'The size of the pictures:'
-size_values = df['size'].unique()
-size_values
+size_values = df['size'].unique().tolist()
+for item in size_values:
+    x = {'width':item[0], 'height': item[1]}
+    x
 '''
 ## Verify data quality
 
