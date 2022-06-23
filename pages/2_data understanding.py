@@ -2,7 +2,6 @@ from PIL import Image
 import streamlit as st
 import os
 import pandas as pd
-from matplotlib import pyplot as plt
 
 st.set_page_config(page_title="Data understanding")
 
