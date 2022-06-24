@@ -5,6 +5,7 @@ from PIL import Image
 import tensorflow as tf
 from PIL.Image import Resampling
 import numpy as np
+import pathlib
 
 st.set_page_config(
     page_title="Hello",
@@ -12,7 +13,7 @@ st.set_page_config(
 )
 
 
-import pathlib
+
 
 dir = './dataSources/'
 data_dir = pathlib.Path(os.path.join(dir, './Garbage classification/Garbage classification/'))
