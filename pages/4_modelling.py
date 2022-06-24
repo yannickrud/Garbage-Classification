@@ -112,7 +112,11 @@ As an addition the option early-stopping can be added. This causes the model to 
 ## Asses model
 '''
 st.image("images/modelResult1.png")
-
+'''
+Shown here are the results of the model after using 10 epochs, our model has an accuracy of approx. 70% on the test data sample and 
+an accuracy of 64% on the validation data sample.
+So there is probably still room for improvements. 
+'''
 
 '''
 '''
