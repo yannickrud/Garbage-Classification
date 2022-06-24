@@ -44,11 +44,41 @@ data_augmentation = keras.Sequential(
 
 
 '''
+## Build model
+'''
+st.code('''
+num_classes = len(class_names)
+
+model = Sequential([
+  data_augmentation,
+  layers.Rescaling(1./255, input_shape=(img_height, img_width, 3)),
+  layers.Conv2D(16, 3, padding='same', activation='relu'),
+  layers.MaxPooling2D(),
+  layers.Conv2D(32, 3, padding='same', activation='relu'),
+  layers.MaxPooling2D(),
+  layers.Conv2D(64, 3, padding='same', activation='relu'),
+  layers.MaxPooling2D(),
+  layers.Dropout(0.2),
+  layers.Flatten(),
+  layers.Dense(128, activation='relu'),
+  layers.Dense(num_classes)
+])''')
+st.code('''
+model.compile(optimizer='adam',
+              loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+              metrics=['accuracy'])
+''')
+'''
 ## Generate test design
 '''
 '''
 Before we create our final model, we need to check the quality and accuracy with the help of a test model.
 For this we provide the function with the necessary datasets and specify how many epochs the model should run through.
+Incrementing the epochs makes the model more and more accurate up to a certain point.
+However, this is additionally dependent on the learning rate.
+If it is very low, the model learns too slowly.
+If it is too high, the model forgets what it has learned before and starts more or less from the beginning.
+Therefore, the learning rate must be selected appropriately.
 '''
 st.code('''
 epochs=10
@@ -57,10 +87,11 @@ history = model.fit(
   validation_data=val_ds,
   epochs=epochs,
   callbacks=[early_stopping])
-''')
+''')'''
+As an addition the option early-stopping can be added. This causes the model to stop as soon as the validation accuracy becomes constantly worse.
 
-'''
-## Build model
+
+
 '''
 
 '''
