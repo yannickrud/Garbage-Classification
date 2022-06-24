@@ -3,6 +3,8 @@ import os
 import pandas as pd
 from PIL import Image
 import tensorflow as tf
+from PIL.Image import Resampling
+import numpy as np
 
 st.set_page_config(
     page_title="Hello",
@@ -10,8 +12,10 @@ st.set_page_config(
 )
 
 
+import pathlib
+
 dir = './dataSources/'
-labels = os.listdir(dir + '/Garbage classification/Garbage classification/')
+data_dir = pathlib.Path(os.path.join(dir, './Garbage classification/Garbage classification/'))
 
 st.title('Garbage-Classification ML4B')
 
@@ -38,11 +42,33 @@ The example used for this tutorial is a garbage classification problem. The data
 https://www.kaggle.com/datasets/asdasdasasdas/garbage-classification
 '''
 
-st.camera_input('Welche Art von Müll bist du? Mache jetzt den Test!')
-file = st.file_uploader("Upload Image",type=["png","jpg","jpeg"])
+img = st.camera_input('Welche Art von Müll bist du? Mache jetzt den Test!')
+img = st.file_uploader("Upload Image",type=["png","jpg","jpeg"])
 
-new_model = tf.keras.models.load_model('./model/cv_model/saved_model.pb')
-
-print(new_model.summary())
+model = tf.keras.models.load_model('./model/cv_model.h5')
 
 
+batch_size = 32
+img_height = 384
+img_width = 512
+
+train_ds = tf.keras.utils.image_dataset_from_directory(
+  data_dir,
+  seed=123,
+  image_size=(img_height, img_width),
+  batch_size=batch_size)
+
+# print(model.predict())
+if img:
+    class_names = train_ds.class_names
+    img = Image.open(img)
+    img = img.resize((512, 384), Resampling.LANCZOS)
+    img_array = tf.keras.utils.img_to_array(img)
+    img_array = tf.convert_to_tensor(img_array[:, :, :3])
+    img_array.shape
+
+    img_array = tf.expand_dims(img_array, 0)  # Create a batch
+    predictions = model.predict(img_array)
+    score = tf.nn.softmax(predictions[0])
+    print("This image most likely belongs to {} with a {:.2f} percent confidence."
+          .format(class_names[np.argmax(score)], 100 * np.max(score)))
