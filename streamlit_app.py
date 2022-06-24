@@ -71,9 +71,21 @@ train_ds = tf.keras.utils.image_dataset_from_directory(
   image_size=(img_height, img_width),
   batch_size=batch_size)
 
-if img or file:
+if img:
     class_names = train_ds.class_names
     img = Image.open(img)
+    img = img.resize((img_width, img_height), Resampling.LANCZOS)
+    img_array = tf.keras.utils.img_to_array(img)
+    img_array = tf.convert_to_tensor(img_array[:, :, :3])
+
+    img_array = tf.expand_dims(img_array, 0)  # Create a batch
+    predictions = model.predict(img_array)
+    score = tf.nn.softmax(predictions[0])
+    'This image most likely belongs to',class_names[np.argmax(score)],' with a ', 100 * np.max(score),'percent confidence.'
+
+if file:
+    class_names = train_ds.class_names
+    img = Image.open(file)
     img = img.resize((img_width, img_height), Resampling.LANCZOS)
     img_array = tf.keras.utils.img_to_array(img)
     img_array = tf.convert_to_tensor(img_array[:, :, :3])
