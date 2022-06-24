@@ -51,7 +51,7 @@ In order to achieve the data mining goals and the connected business goals to th
 describe an intended plan, in which you are describing the required steps for the rest of the project.
 #### Project Plan
 '''
-st.image("images/ML4B_Crisp_Plan_Bsp.png")
+st.image("images/ProjectPlan.png")
 '''
 #### Initial Assessment of tools and techniques
 In order to achieve our goals we will use a Convolutional Neural Network (CNN). More about that in the 
