@@ -2,6 +2,7 @@ import streamlit as st
 import os
 import pandas as pd
 from PIL import Image
+import tensorflow as tf
 
 st.set_page_config(
     page_title="Hello",
@@ -39,4 +40,9 @@ https://www.kaggle.com/datasets/asdasdasasdas/garbage-classification
 
 st.camera_input('Welche Art von Müll bist du? Mache jetzt den Test!')
 file = st.file_uploader("Upload Image",type=["png","jpg","jpeg"])
+
+new_model = tf.keras.models.load_model('./model/cv_model/saved_model.pb')
+
+print(new_model.summary())
+
 
