@@ -19,7 +19,6 @@ The project has a useful outcome if the user of this app can build a computer vi
 '''
 
 '''
-neu
 ## Assess situation
 The next step is to get a more detailed look at the resources, constraints, assumptions and other factors that
 are influencing the goal and project plan.
@@ -35,7 +34,7 @@ Our available resources are the following:
 '''
 '''
 #### Risks and Contingencies
-The risks and contingencies 
+Misjudging by the data model into wrong categories, as well as wrongly categorizing as trash.
 '''
 '''
 ## Determine data mining goals
@@ -47,6 +46,12 @@ The data mining goal is to categorize trash on a given image.
 In order to achieve the data mining goals and the connected business goals to them you have to 
 describe an intended plan, in which you are describing the required steps for the rest of the project.
 #### Project Plan
-
+'''
+st.image("images/ML4B_Crisp_Plan_Bsp.png")
+'''
 #### Initial Assessment of tools and techniques
+In order to achieve our goals we will use a Convolutional Neural Network (CNN). More about that in the 
+later stages of the tutorial.
+
+
 '''
