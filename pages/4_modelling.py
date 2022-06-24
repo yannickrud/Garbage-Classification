@@ -79,6 +79,7 @@ model.compile(optimizer='adam',
               metrics=['accuracy'])
 ''')
 '''
+
 ## Generate test design
 '''
 '''
