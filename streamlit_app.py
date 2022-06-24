@@ -50,8 +50,8 @@ model = tf.keras.models.load_model('./model/cv_model.h5')
 
 
 batch_size = 32
-img_height = 384
-img_width = 512
+img_height = 180
+img_width = 180
 
 train_ds = tf.keras.utils.image_dataset_from_directory(
   data_dir,
@@ -63,7 +63,7 @@ if img:
     print(img)
     class_names = train_ds.class_names
     img = Image.open(img)
-    img = img.resize((512, 384), Resampling.LANCZOS)
+    img = img.resize((img_width, img_height), Resampling.LANCZOS)
     img_array = tf.keras.utils.img_to_array(img)
     img_array = tf.convert_to_tensor(img_array[:, :, :3])
 
