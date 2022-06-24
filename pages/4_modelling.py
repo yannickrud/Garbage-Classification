@@ -111,3 +111,6 @@ As an addition the option early-stopping can be added. This causes the model to 
 '''
 ## Asses model
 '''
+st.image("images/modelResult.png")
+'''
+'''
