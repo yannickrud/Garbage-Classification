@@ -64,15 +64,17 @@ model = Sequential([
   layers.Dense(128, activation='relu'),
   layers.Dense(num_classes)
 ])''')
-"layers.Rescaling(...) rescales the height and width of the image"
-"layers.Conv2D(...) creates a convolution kernel (3x3 in this case) that is convolved with the layer input to produce a tensor of outputs (16)."
-"layers.MaxPooling2D() is much like a Conv2D layer, except that it uses a simple maximum function instead of a kernel, with the pool_size parameter analogous to kernel_size." \
-" A MaxPool2D layer doesn't have any trainable weights like a convolutional layer does in its kernel, however."
-"layers.Conv2D() [with higher filter values] and layers.MaxPooling2D() get repeated to get more precise results."
-"layers.Dropout() is a layer that prevents the model from overfitting by randomly setting input units to 0 by the frequency rate of (0.2)."
-"layers.Flatten() flattens the input, but does not affect the batch size. It converts two dimensional outputs of the base into the one dimensional inputs needed by the head."
-"layers.Dense(128,...) performs a layer of hidden units."
-"layers.Dense(num_classes) transforms the output to a probability score for the different trash classes."
+'''
+- "layers.Rescaling(...) rescales the height and width of the image"
+- "layers.Conv2D(...) creates a convolution kernel (3x3 in this case) that is convolved with the layer input to produce a tensor of outputs (16)."
+- "layers.MaxPooling2D() is much like a Conv2D layer, except that it uses a simple maximum function instead of a kernel, with the pool_size parameter analogous to kernel_size." \
+- " A MaxPool2D layer doesn't have any trainable weights like a convolutional layer does in its kernel, however."
+- "layers.Conv2D() [with higher filter values] and layers.MaxPooling2D() get repeated to get more precise results."
+- "layers.Dropout() is a layer that prevents the model from overfitting by randomly setting input units to 0 by the frequency rate of (0.2)."
+- "layers.Flatten() flattens the input, but does not affect the batch size. It converts two dimensional outputs of the base into the one dimensional inputs needed by the head."
+- "layers.Dense(128,...) performs a layer of hidden units."
+- "layers.Dense(num_classes) transforms the output to a probability score for the different trash classes."
+'''
 st.code('''
 model.compile(optimizer='adam',
               loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
