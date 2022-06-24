@@ -56,7 +56,7 @@ https://www.kaggle.com/datasets/asdasdasasdas/garbage-classification
 '''
 
 img = st.camera_input('Welche Art von Müll bist du? Mache jetzt den Test!')
-file = st.file_uploader("Upload Image",type=["png","jpg","jpeg"])
+
 
 model = tf.keras.models.load_model('./model/cv_model.h5')
 
@@ -81,7 +81,11 @@ if img:
     img_array = tf.expand_dims(img_array, 0)  # Create a batch
     predictions = model.predict(img_array)
     score = tf.nn.softmax(predictions[0])
-    'This image most likely belongs to',class_names[np.argmax(score)],' with a ', 100 * np.max(score),'percent confidence.'
+    'This taken image most likely belongs to',class_names[np.argmax(score)],' with a ', 100 * np.max(score),'percent confidence.'
+
+
+file = st.file_uploader("Upload Image",type=["png","jpg","jpeg"])
+
 
 if file:
     class_names = train_ds.class_names
@@ -93,4 +97,4 @@ if file:
     img_array = tf.expand_dims(img_array, 0)  # Create a batch
     predictions = model.predict(img_array)
     score = tf.nn.softmax(predictions[0])
-    'This image most likely belongs to',class_names[np.argmax(score)],' with a ', 100 * np.max(score),'percent confidence.'
+    'This uploaded image most likely belongs to',class_names[np.argmax(score)],' with a ', 100 * np.max(score),'percent confidence.'
