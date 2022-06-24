@@ -41,6 +41,24 @@ for label in os.listdir(data_dir):
 
 df = pd.DataFrame.from_dict(dicts)
 
+st.code('''
+dir = './dataSources/'
+data_dir = pathlib.Path(os.path.join(dir, './Garbage classification/Garbage classification/'))
+
+dicts = []
+
+for label in os.listdir(data_dir):
+    directory = os.path.join(data_dir, label)
+    samples = os.listdir(directory)
+
+    for img in samples:
+        z = Image.open(os.path.join(directory, img))
+        x = {'img_name': img, 'category': label, 'size': z.size}
+        dicts.append(x)
+
+df = pd.DataFrame.from_dict(dicts)
+''', language='python')
+
 
 
 '''
