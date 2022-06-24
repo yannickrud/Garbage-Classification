@@ -30,7 +30,11 @@ Our available resources are the following:
 - the given data samples
 - IDE as developer interface
 - gitbook as front end
-#### Requirements, Assumptions and Constraints                                            
+#### Requirements, Assumptions and Constraints 
+The requirements of the project are to have the ability to code neural networks in order to achieve the goal(s).
+Legal constraints could be copyrighted images included in the dataset. (But copyrighted images of trash would be 
+kinda odd.)
+                                           
 '''
 '''
 #### Risks and Contingencies
@@ -52,6 +56,7 @@ st.image("images/ML4B_Crisp_Plan_Bsp.png")
 #### Initial Assessment of tools and techniques
 In order to achieve our goals we will use a Convolutional Neural Network (CNN). More about that in the 
 later stages of the tutorial.
+
 
 
 '''

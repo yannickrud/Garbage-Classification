@@ -15,9 +15,10 @@ as on models which are not necessarily related to the original business objectiv
 challenges, information or hints for future directions.
 
 #### Assessment of data mining results with respect to business success criteria
-
+Since we have met our business plan goals the project can be evaluated as success.
 
 #### Approved models
+The generated models that met the selected criteria became approved models.
 '''
 
 '''
