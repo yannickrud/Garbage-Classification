@@ -24,14 +24,26 @@ st.title('Garbage-Classification ML4B')
 with st.expander("Team Presentation"):
     "Hi, we are Yannick Rudolf, Nico Schunk and Christoph Lehr. We are creating this app as part of our Machine Learning for Business course."
     col1, col2, col3 = st.columns(3)
+
+width = 635
+height = 845
 with col1:
     # Yannick Rudolf
+    img = Image.open('images/Yannick.jpg')
+    resized_img = img.resize((width,height))
+    st.image(resized_img)
     st.markdown("Yannick Rudolf", unsafe_allow_html=True)
 with col2:
     # Nico Schunk
+    img = Image.open('images/Nico.jpg')
+    resized_img = img.resize((width, height))
+    st.image(resized_img)
     st.markdown("Nico Schunk", unsafe_allow_html=True)
 with col3:
     # Christoph Lehr
+    img = Image.open('images/Christoph.jpg')
+    resized_img = img.resize((width, height))
+    st.image(resized_img)
     st.markdown("Christoph Lehr", unsafe_allow_html=True)
 
 
@@ -59,7 +71,7 @@ train_ds = tf.keras.utils.image_dataset_from_directory(
   image_size=(img_height, img_width),
   batch_size=batch_size)
 
-if img:
+if img or file:
     class_names = train_ds.class_names
     img = Image.open(img)
     img = img.resize((img_width, img_height), Resampling.LANCZOS)
