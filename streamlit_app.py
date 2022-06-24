@@ -60,7 +60,6 @@ train_ds = tf.keras.utils.image_dataset_from_directory(
   batch_size=batch_size)
 
 if img:
-    print(img)
     class_names = train_ds.class_names
     img = Image.open(img)
     img = img.resize((img_width, img_height), Resampling.LANCZOS)
