@@ -54,8 +54,17 @@ This app is a tutorial: How to build your own computer vision model following th
 
 The example used for this tutorial is a garbage classification problem. The data used for this problem can be found on kaggle:
 https://www.kaggle.com/datasets/asdasdasasdas/garbage-classification
+###
 '''
 
+with st.expander("CRISP-DM-Model"):
+    "Test"
+    img = Image.open('images/Christoph.jpg')
+    st.image(img)
+
+'''
+###
+'''
 img = st.camera_input('What kind of trash are you? Go ahead and take the test!')
 
 
@@ -84,7 +93,9 @@ if img:
     score = tf.nn.softmax(predictions[0])
     'This taken image most likely belongs to',class_names[np.argmax(score)],' with a ', 100 * np.max(score),'percent confidence.'
 
-
+'''
+###
+'''
 file = st.file_uploader("Upload Image",type=["png","jpg","jpeg"])
 
 
@@ -99,3 +110,15 @@ if file:
     predictions = model.predict(img_array)
     score = tf.nn.softmax(predictions[0])
     'This uploaded image most likely belongs to',class_names[np.argmax(score)],' with a ', 100 * np.max(score),'percent confidence.'
+
+'''
+###
+### Samples
+'''
+selected_images = st.selectbox("Trash Type", os.listdir(data_dir))
+type_path = os.path.join(data_dir, selected_images)
+list_of_images = os.listdir(type_path)
+image_box = st.selectbox("Select Sample", list_of_images)
+sample_path = os.path.join(type_path,image_box)
+image = Image.open(sample_path)
+st.image(image, caption=image_box)
