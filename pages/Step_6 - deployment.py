@@ -12,6 +12,8 @@ Determine a strategy for deployment based on the evaluation results. Document it
 a general procedure.
 
 #### Deployment plan
+This tutorial is hosted on streamlit for free. Thus it is for free the tutorial can be done by every visitor of 
+this site.
 '''
 
 '''
@@ -20,6 +22,9 @@ If the data mining result becomes part of the business, proper monitoring and ma
 the incorrect usage of data mining results. Constructing a plan to monitor the deployment of the data mining
 results is recommended.
 #### Monitoring and maintenance plan
+Actually in this project there is no concrete plan for monitoring and maintenance. This tutorial is a simple introduction to 
+building computer vision models. No high-stake buisness objectives rely on this project. Of course when streamlit reports
+an error we try to maintain the project and keep it alive.
 '''
 
 '''
@@ -41,4 +46,11 @@ Can be attended on friday the 8th of July
 ## Review project
 Last but not least, gather what went wrong, what went right, find room for improvements and what was done well.
 #### Experience documentation
+In this project the most significant problem is that the predictions of the buildt model is not as high as expected. 
+This is where definetly is room for improvement but it is even more important that people who use this app as tutorial
+get an overview of important topics regarding
+computer vision projects like:
+- how do I understand my data
+- how do I prepare data for modelling, including data augmentation and splitting the data into useful train and validation sets
+- how do I model my own computer vision model
 '''
