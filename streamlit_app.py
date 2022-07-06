@@ -52,6 +52,7 @@ with col3:
 '''
 This app is a tutorial: How to build your own computer vision model following the CRISP-DM Process Model. 
 
+
 The example used for this tutorial is a garbage classification problem. The data used for this problem can be found on kaggle:
 https://www.kaggle.com/datasets/asdasdasasdas/garbage-classification
 ###
@@ -59,7 +60,7 @@ https://www.kaggle.com/datasets/asdasdasasdas/garbage-classification
 
 with st.expander("CRISP-DM-Model"):
     "Test"
-    img = Image.open('images/Christoph.jpg')
+    img = Image.open('images/CRISPDMModel.png')
     st.image(img)
 
 '''
