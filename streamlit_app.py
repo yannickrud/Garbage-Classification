@@ -59,10 +59,11 @@ https://www.kaggle.com/datasets/asdasdasasdas/garbage-classification
 '''
 
 with st.expander("CRISP-DM-Model"):
-    "Test"
+
     img = Image.open('images/CRISPDMModel.png')
     st.image(img)
-
+    "The Cross industry standard process for data mining (CRISP-DM process model) gives you a guide that helps you creating an ordered approach towards building, understanding," \
+    "modeling, evaluation and deploying your buisness idea based on a dataset."
 '''
 ###
 '''
