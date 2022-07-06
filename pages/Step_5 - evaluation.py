@@ -30,6 +30,11 @@ the questions:
 - Are the used attributes suitable for future analyses?
 
 #### Review of process
+In retrospect, the entire machine learning project is considered once again.
+Were all important and necessary steps takento train a successful model?
+Are the results good enough to continue on the base of this model or do you want to train a completely new one?
+
+With an accuracy of 64% for our model, there is still room for improvement.
 '''
 
 '''
@@ -39,6 +44,12 @@ new data mining projects. Factors such as remaining resources and budget should 
 influencing the decision.
 
 #### List of possible actions
+Possible actions at this point are:
+- Take the model the way it is
+- Continue the project and extend the model to increase the accuracy
+- Cancel the project
 
 #### Decision
+Since this is a simple introduction how to build computer vision models, we are quite happy with the result and
+take the model the way it is.
 '''
