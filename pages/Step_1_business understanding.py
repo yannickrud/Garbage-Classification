@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.set_page_config(page_title="Business understanding")
+st.set_page_config(page_title="Step 1: Business understanding")
 
 '''
 # Business understanding
