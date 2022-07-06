@@ -11,14 +11,15 @@ st.set_page_config(
     page_title="Hello",
     page_icon="👋",
 )
-
-
-
-
 dir = './dataSources/'
+
+
+
+
+
 data_dir = pathlib.Path(os.path.join(dir, './Garbage classification/Garbage classification/'))
 
-st.title('Garbage-Classification ML4B')
+st.title('Tutorial: Garbage-Classification ML4B')
 
 
 with st.expander("Team Presentation"):
@@ -55,7 +56,7 @@ The example used for this tutorial is a garbage classification problem. The data
 https://www.kaggle.com/datasets/asdasdasasdas/garbage-classification
 '''
 
-img = st.camera_input('Welche Art von Müll bist du? Mache jetzt den Test!')
+img = st.camera_input('What kind of trash are you? Go ahead and take the test!')
 
 
 model = tf.keras.models.load_model('./model/cv_model.h5')
