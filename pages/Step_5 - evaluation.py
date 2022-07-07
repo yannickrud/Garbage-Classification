@@ -31,7 +31,7 @@ the questions:
 
 #### Review of process
 In retrospect, the entire machine learning project is considered once again.
-Were all important and necessary steps takento train a successful model?
+Were all important and necessary steps taken to train a successful model?
 Are the results good enough to continue on the base of this model or do you want to train a completely new one?
 
 With an accuracy of 64% for our model, there is still room for improvement.

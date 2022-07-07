@@ -166,3 +166,7 @@ Nowadays luckily many of the steps like formatting the images to numpy arrays is
 (e.g. tensorflow) in our example:
 '''
 st.code('tf.keras.utils.image_dataset_from_directory')
+'''
+Found 2527 files belonging to 6 classes. 
+Using 2022 files for training.
+'''

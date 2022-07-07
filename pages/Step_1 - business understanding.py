@@ -29,7 +29,7 @@ are influencing the goal and project plan.
 Our available resources are the following:  
 - the given data samples
 - IDE as developer interface
-- gitbook as front end
+- streamlit as front end
 #### Requirements, Assumptions and Constraints 
 The requirements of the project are to have the ability to code neural networks in order to achieve the goal(s).
 Legal constraints could be copyrighted images included in the dataset. (But copyrighted images of trash would be 

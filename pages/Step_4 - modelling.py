@@ -51,8 +51,8 @@ st.code('''
 num_classes = len(class_names)
 
 model = Sequential([
-  data_augmentation,
   layers.Rescaling(1./255, input_shape=(img_height, img_width, 3)),
+  data_augmentation,
   layers.Conv2D(16, 3, padding='same', activation='relu'),
   layers.MaxPooling2D(),
   layers.Conv2D(32, 3, padding='same', activation='relu'),
